@@ -1,0 +1,7 @@
+#For Rolling Calender
+
+	=#date(2018, 1, 1)
+
+#f(x) after that M formula
+	= List.dates(Source, Number.From(DateTime:LocalNow()) - Number.From	(Source),#duration(1,0,0,0))
+  
