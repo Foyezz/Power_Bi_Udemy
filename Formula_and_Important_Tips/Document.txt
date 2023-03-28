@@ -1,7 +1,14 @@
+Section 3:
+
 #For Rolling Calender
 
 	=#date(2018, 1, 1)
 
 #f(x) after that M formula
 	= List.dates(Source, Number.From(DateTime:LocalNow()) - Number.From(Source),#duration(1,0,0,0))
+
+Query editor, transforming the text, transforming the numerical value, working with date/time, generating index and conditional column, grouping and aggregating, pivoting and unpivoting,
+merging and appending queries, source and refresh settings, data types and categories, hierarchy, importing full model.
+
+Section 4: 
   
