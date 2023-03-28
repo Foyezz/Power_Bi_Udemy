@@ -10,5 +10,9 @@ Section 3:
 Query editor, transforming the text, transforming the numerical value, working with date/time, generating index and conditional column, grouping and aggregating, pivoting and unpivoting,
 merging and appending queries, source and refresh settings, data types and categories, hierarchy, importing full model.
 
-Section 4: 
-  
+Section 4:
+
+Data Model: creating relationship among tables
+Database Normalization: Database normalization is the process used to organize a database into tables in a way that eliminates redundant data and improves data integrity
+Data Tables vs Lookup Tables: Data table contains numerical values, typically at a granular level, with Id ans Key columns that can be used to create table relationship.  
+			      Lookup tables provide description, often text-based attributes about each dimention in a table.
