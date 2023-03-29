@@ -16,3 +16,27 @@ Data Model: creating relationship among tables
 Database Normalization: Database normalization is the process used to organize a database into tables in a way that eliminates redundant data and improves data integrity
 Data Tables vs Lookup Tables: Data table contains numerical values, typically at a granular level, with Id ans Key columns that can be used to create table relationship.  
 			      Lookup tables provide description, often text-based attributes about each dimention in a table.
+SnowFlake Relationship
+
+
+Data Flows downstream according to the arrow sign.
+
+Section 5:
+Dax = Data analysis expression , Dax Measures & Dax column.
+what is measure? how it is calculated?
+
+# day of the week(1-7)
+Day of Week = WEEKDAY(AW_Calender_Lookup[Date], 2). For the columin calender
+
+# logical operator
+Weekend = IF(OR(AW_Calender_Lookup[Day of Week] = 6, AW_Calender_Lookup[Day of Week] = 7), "Weekend", "Weekday")
+Weekend = IF(AW_Calender_Lookup[Day of Week] = 6 || AW_Calender_Lookup[Day of Week] = 7, "Weekend", "Weekday")
+# Math calculation
+Quantity Returned = SUM(AW_Returns[Return Quantity])
+Total Revenue = SUM(AW_Sales[Revenue])
+Return Rate = [Quantity Returned] / [QuantitySold] or Return Rate = DIVIDE([Quantity Returned], [QuantitySold], "No Sales")
+Avg Retail Price = AVERAGE(AW_Product_Lookup[ProductPrice])
+Total Returns = COUNTROWS(AW_Returns) or Total Returns = COUNT(AW_Returns[ReturnQuantity])
+QuantitySold = SUM(AW_Sales[OrderQuantity])
+Total Orders = DISTINCTCOUNT(AW_Sales[OrderNumber])
+All Orders = CALCULATE([Total Orders], ALL(AW_Sales)) (Grand Total)
