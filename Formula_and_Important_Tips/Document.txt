@@ -39,4 +39,31 @@ Avg Retail Price = AVERAGE(AW_Product_Lookup[ProductPrice])
 Total Returns = COUNTROWS(AW_Returns) or Total Returns = COUNT(AW_Returns[ReturnQuantity])
 QuantitySold = SUM(AW_Sales[OrderQuantity])
 Total Orders = DISTINCTCOUNT(AW_Sales[OrderNumber])
+# Calculate and All 
 All Orders = CALCULATE([Total Orders], ALL(AW_Sales)) (Grand Total)
+% of All Orders = [Total Orders] / [All Orders]
+
+# Iterator function(SUMX,COUNTX, RANKX...)
+Total Revenue Measure = SUMX(AW_Sales, AW_Sales[OrderQuantity] * AW_Sales[Retail Price])
+10-Day Rolling Revenue = CALCULATE([Total Revenue], DATESINPERIOD(AW_Calender_Lookup[Date], MAX(AW_Calender_Lookup[Date]), -10, DAY))
+Customer Priority = IF(AW_Customer_Lookup[Current Age]<50 && AW_Customer_Lookup[AnnualIncome]>100000, "Priority", "Standard")
+Price Point = IF(AW_Product_Lookup[ProductPrice]>500, "High", IF(AW_Product_Lookup[ProductPrice]>100, "Mid-Range", "Low"))
+Short Day = UPPER(LEFT(AW_Calender_Lookup[Day Name], 3))
+SKU Category = LEFT(AW_Product_Lookup[ProductSKU], SEARCH("-", AW_Product_Lookup[ProductSKU])-1)
+Product Models = DISTINCTCOUNT(AW_Product_Lookup[ModelName])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
