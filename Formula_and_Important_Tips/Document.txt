@@ -51,6 +51,8 @@ Price Point = IF(AW_Product_Lookup[ProductPrice]>500, "High", IF(AW_Product_Look
 Short Day = UPPER(LEFT(AW_Calender_Lookup[Day Name], 3))
 SKU Category = LEFT(AW_Product_Lookup[ProductSKU], SEARCH("-", AW_Product_Lookup[ProductSKU])-1)
 Product Models = DISTINCTCOUNT(AW_Product_Lookup[ModelName])
+Total Cost = SUMX(AW_Sales, AW_Sales[OrderQuantity] * RELATED(AW_Product_Lookup[ProductCost]))
+Total Profit = [Total Revenue] - [Total Cost] 
 
 
 
