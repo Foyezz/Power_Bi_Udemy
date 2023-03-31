@@ -54,6 +54,10 @@ Product Models = DISTINCTCOUNT(AW_Product_Lookup[ModelName])
 Total Cost = SUMX(AW_Sales, AW_Sales[OrderQuantity] * RELATED(AW_Product_Lookup[ProductCost]))
 Total Profit = [Total Revenue] - [Total Cost] 
 
+Section: 6
+
+# KPI = Key performance indicator
+
 
 
 
